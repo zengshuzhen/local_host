@@ -8,7 +8,7 @@ if($userName == "" || $password == "" || $confirmPassword == "")
 {
     echo  "<script>alert('信息不能为空！重新填写');window.location.href='register.html'</script>";
 } else if(strlen($userName)<3)
-{
+{////////
     echo "<script>alert('重新填写');window.location.href='register.html'</script>";
 }else if (strlen($password)<5)
 {
