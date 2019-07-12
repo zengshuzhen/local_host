@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>kkkkkkk</title>
+    <title>系统</title>
+    <style>
+
+    </style>
 </head>
 <body>
 <form action="login_check.php" method="post"
@@ -13,7 +16,7 @@
         <p>用户名:
             <input type="text" name="username" size="20" maxlength="15" placeholder="">
             <br></p>
-        <p>密码:
+        <p>密    码 :
             <input type="password" name="password" size="20" maxlength="15">
             <br></p>
         <input type="submit" value="登陆">

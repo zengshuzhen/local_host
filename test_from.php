@@ -1,4 +1,8 @@
 <?php
+echo "<head>
+    <meta charset=\"UTF-8\">
+    <title>注册</title>
+</head>";
 header("Content_type:text/html;charset=utf-8");
 $link = mysqli_connect('localhost','root','root','test');
 if($link){
@@ -10,13 +14,13 @@ $confirmPassword = $_POST['confirmPassword'];
 if($userName == "" || $password == "" || $confirmPassword == "")
 {
    echo  "<script>alert('信息不能为空！重新填写');window.location.href='register.html'</script>";
-}elseif((strlen($userName)<3)||(!preg_match('',$userName)));
+} else if((strlen($userName)<3)||(!preg_match('',$userName)))
 {
     echo "<script>alert('重新填写');window.location.href='register.html'</script>";
-}elseif (strlen($password)<5);
+}else if (strlen($password)<5)
 {
     echo "<script>alert('少于5位数');window.location.href='register.html'</script>";
-}elseif ($password != $confirmPassword);
+}else if ($password != $confirmPassword)
 {
  echo "<script>alert('两次密码不相同！重新填写');window.location.href='register.html'</script>";
  }else{
@@ -29,4 +33,4 @@ if($userName == "" || $password == "" || $confirmPassword == "")
      }
 }
 ?>
-
+ b

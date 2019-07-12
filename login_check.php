@@ -22,7 +22,7 @@ if (isset($_POST["submit"]) && $_POST["submit"] == "登陆")
         }
         mysqli_select_db($conn,"test");
         mysqli_set_charset($conn,"utf8");
-        $sql = "select username,userpassword from user where username = '$user'and userpassword = '$password'";
+        $sql = "select userName,password from user where username = '$user'and password = '$password'";
         $result = mysqli_query($conn,$sql);
         $num = mysqli_num_rows($result);
         if($num)
@@ -38,7 +38,6 @@ if (isset($_POST["submit"]) && $_POST["submit"] == "登陆")
 else{
 echo "<head>
     <meta charset=\"UTF-8\">
-    <title>注册</title>
 </head>";
     echo "<script>alert('未提交成功');</script>";
 }
