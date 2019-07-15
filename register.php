@@ -8,21 +8,21 @@ if($userName == "" || $password == "" || $confirmPassword == "")
 {
     echo  "<script>alert('信息不能为空！重新填写');window.location.href='register.html'</script>";
 } else if(strlen($userName)<3)
-{////////
-    echo "<script>alert('重新填写');window.location.href='register.html'</script>";
+{
+    echo "<script>alert('用户名少于3位数');window.location.href='register.html'</script>";
 }else if (strlen($password)<5)
 {
-    echo "<script>alert('少于5位数');window.location.href='register.html'</script>";
+    echo "<script>alert('登陆密码少于5位数');window.location.href='register.html'</script>";
 }else if ($password != $confirmPassword)
 {
-    echo "<script>alert('两次密码不相同！重新填写');window.location.href='register.html'</script>";
+    echo "<script>alert('两次密码不相同!');window.location.href='register.html'</script>";
 }else{
     $sql= "insert into login(useName,password,confirmPassword)values('$userName','$password','$confirmPassword')";
-    if(!(mysqli_query($link,$sql)))
+    if(!(mysqli_query($sql)))
     {
-        echo "<script>alert('数据插入失败');window.location.href='register.html'</script>";
+        echo "<script>alert('数据插入成功');window.location.href='login.php'</script>";
     }else{
-        echo "<script>alert('数据插入成功')</script>";
+        echo "<script>alert('数据插入失败');window.location.href='register.html'</script>";
     }
 }
 $host    = 'localhost';
