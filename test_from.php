@@ -1,33 +1,25 @@
 <?php
-echo "<head>
-    <meta charset=\"UTF-8\"></head>";
-header("Content_type:text/html;charset=utf-8");
-$conn = mysqli_connect('localhost','root','root','test');
-if($conn){
-    die("连接失败:".mysqli_connect_error());
-}
-$userName = $_POST['userName'];
-$password = $_POST['password'];
-$confirmPassword = $_POST['confirmPassword'];
-if($userName == "" || $password == "" || $confirmPassword == "")
-{
-   echo  "<script>alert('信息不能为空！重新填写');window.location.href='register.html'</script>";
-} else if((strlen($userName)<3)||(!preg_match('',$userName)))
-{
-    echo "<script>alert('重新填写');window.location.href='register.html'</script>";
-}else if (strlen($password)<5)
-{
-    echo "<script>alert('少于5位数');window.location.href='register.html'</script>";
-}else if ($password != $confirmPassword)
-{
- echo "<script>alert('两次密码不相同！重新填写');window.location.href='register.html'</script>";
- }else{
-     $sql= "insert into login(useName,password,confirmPassword)values('$userName','$password','$confirmPassword')";
-     if(!(mysqli_query($conn,$sql)))
-     {
-         echo "<script>alert('数据插入失败');window.location.href='register.html'</script>";
-     }else{
-         echo "<script>alert('数据插入成功');window.location.href='login.php'</script>";
-     }
-}
+header("Content-Type:text/html;charset=utf-8");
 ?>
+<div align="center">
+<h1>后台文章管理页面</h1>
+<form method="post">
+    <p>文章分类:
+    <select name="category">
+    </select></p>
+    <p>标题:<input type="text" name="title"><br></p>
+    <?php
+    if(isset($_POST['content'])){
+        exit($_POST['content']);
+    }
+    ?>
+    <form method="post">
+        <textarea name="content" cols="80" rows="40">内容</textarea>
+    </form>
+    <div>
+    <input type="submit" value="提交">
+    <input type="button" value="取消" onclick="{if(confirm('确定要取消添加文章吗?'))
+    {window.location.href='index.php';}}">
+    </div>
+</form>
+</div>

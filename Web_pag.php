@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>text</title>
+    <title>tate</title>
 </head>
 <body>
-<form method="post" action="" id="list_form">
-        <div class="padding border-bottom">
-            <ul style="padding-left:10px;">
-                <input type="text" placeholder="请输入关键字" name="" style="width:250px; line-height:17px;display:inline-block" />
-                <a class="" onclick="constructor" > 搜索</a>
-            </ul>
+<table border="2" cellpadding="5" width="30%">
+    <tr bgcolor="#87ceeb">
+        <td align="center">文章分类</td>
+        <td>操作</td>
+        <td align="center">顺序</td>
+    </tr>
+    <tr>
+        <td><input type="text" name="" value=""></td>
+        <td><a href="#">删除</a>|<a href="">编辑</a> </td>
+    </tr>
+</table>
 </body>
 </html>
